@@ -38,6 +38,11 @@
     <input type="text" id="alley" placeholder="輸入弄..." class="border border-gray-300 rounded p-2 mb-2 w-full">
 
     <input type="text" id="number" placeholder="輸入號..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+
+    <input type="text" id="floor" placeholder="輸入樓..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+
+    <input type="text" id="subNumber" placeholder="輸入之..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+
     <ul id="suggestions" class="border border-gray-300 rounded p-2 mb-2 bg-white shadow-md"></ul>
 
     <input type="text" id="fullAddress" placeholder="完整地址" readonly
@@ -142,8 +147,10 @@
             const lane = document.getElementById('lane').value;
             const alley = document.getElementById('alley').value;
             const number = document.getElementById('number').value;
+            const floor = document.getElementById('floor').value;
+            const subNumber = document.getElementById('subNumber').value;
 
-            const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}`;
+            const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}${floor ? floor + '樓' : ''}${subNumber ? '之' + subNumber : ''}`;
             document.getElementById('fullAddress').value = fullAddress;
 
             const address = encodeURIComponent(fullAddress);
@@ -156,6 +163,8 @@
         document.getElementById('lane').addEventListener('input', updateFullAddress);
         document.getElementById('alley').addEventListener('input', updateFullAddress);
         document.getElementById('number').addEventListener('input', updateFullAddress);
+        document.getElementById('floor').addEventListener('input', updateFullAddress);
+        document.getElementById('subNumber').addEventListener('input', updateFullAddress);
 
         const fullAddressInput = document.getElementById('fullAddress');
         const addressLink = document.getElementById('addressLink');
