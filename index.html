@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>路名搜尋</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         #suggestions {
             border: 1px solid #ccc;
@@ -24,18 +25,19 @@
 </head>
 
 <body>
-    <select id="village">
+    <select id="village" class="border border-gray-300 rounded p-2 mb-2 w-full">
         <option value="">選擇里別...</option>
     </select>
 
-    <input type="text" id="neighbor" placeholder="輸入鄰...">
+    <input type="text" id="neighbor" placeholder="輸入鄰..." class="border border-gray-300 rounded p-2 mb-2 w-full">
 
-    <input type="text" id="search" placeholder="輸入路名...">
+    <input type="text" id="search" placeholder="輸入路名..." class="border border-gray-300 rounded p-2 mb-2 w-full">
 
-    <input type="text" id="number" placeholder="輸入號...">
-    <ul id="suggestions"></ul>
+    <input type="text" id="number" placeholder="輸入號..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+    <ul id="suggestions" class="border border-gray-300 rounded p-2 mb-2 bg-white shadow-md"></ul>
 
-    <input type="text" id="fullAddress" placeholder="完整地址" readonly>
+    <input type="text" id="fullAddress" placeholder="完整地址" readonly
+        class="border border-gray-300 rounded p-2 mb-2 w-full bg-gray-100">
 
     <script>
         const roadNames = [
