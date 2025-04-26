@@ -33,6 +33,10 @@
 
     <input type="text" id="search" placeholder="輸入路名..." class="border border-gray-300 rounded p-2 mb-2 w-full">
 
+    <input type="text" id="lane" placeholder="輸入巷..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+
+    <input type="text" id="alley" placeholder="輸入弄..." class="border border-gray-300 rounded p-2 mb-2 w-full">
+
     <input type="text" id="number" placeholder="輸入號..." class="border border-gray-300 rounded p-2 mb-2 w-full">
     <ul id="suggestions" class="border border-gray-300 rounded p-2 mb-2 bg-white shadow-md"></ul>
 
@@ -132,15 +136,19 @@
             const village = document.getElementById('village').value;
             const neighbor = document.getElementById('neighbor').value;
             const road = document.getElementById('search').value;
+            const lane = document.getElementById('lane').value;
+            const alley = document.getElementById('alley').value;
             const number = document.getElementById('number').value;
 
-            const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${number ? number + '號' : ''}`;
+            const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}`;
             document.getElementById('fullAddress').value = fullAddress;
         }
 
         document.getElementById('village').addEventListener('change', updateFullAddress);
         document.getElementById('neighbor').addEventListener('input', updateFullAddress);
         document.getElementById('search').addEventListener('input', updateFullAddress);
+        document.getElementById('lane').addEventListener('input', updateFullAddress);
+        document.getElementById('alley').addEventListener('input', updateFullAddress);
         document.getElementById('number').addEventListener('input', updateFullAddress);
     </script>
 </body>
