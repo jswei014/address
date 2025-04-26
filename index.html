@@ -92,6 +92,7 @@
                     li.addEventListener('click', () => {
                         searchInput.value = match;
                         suggestions.innerHTML = '';
+                        updateFullAddress(); // 更新完整地址
                     });
                     suggestions.appendChild(li);
                 });
