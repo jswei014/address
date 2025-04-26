@@ -27,8 +27,14 @@
     <select id="village">
         <option value="">選擇里別...</option>
     </select>
+
+    <input type="text" id="neighbor" placeholder="輸入鄰...">
+
     <input type="text" id="search" placeholder="輸入路名...">
+
+    <input type="text" id="number" placeholder="輸入號...">
     <ul id="suggestions"></ul>
+
 
 
     <script>
@@ -105,6 +111,18 @@
             option.value = village;
             option.textContent = village;
             villageSelect.appendChild(option);
+        });
+
+        const neighborInput = document.getElementById('neighbor');
+        neighborInput.addEventListener('input', () => {
+            console.log(`輸入的鄰為: ${neighborInput.value}`);
+            // 可在此處新增處理鄰的邏輯
+        });
+
+        const numberInput = document.getElementById('number');
+        numberInput.addEventListener('input', () => {
+            console.log(`輸入的號為: ${numberInput.value}`);
+            // 可在此處新增處理號的邏輯
         });
     </script>
 </body>
