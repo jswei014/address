@@ -43,6 +43,9 @@
     <input type="text" id="fullAddress" placeholder="完整地址" readonly
         class="border border-gray-300 rounded p-2 mb-2 w-full bg-gray-100">
 
+    <a id="addressLink" href="https://recall2025.ourtaiwan.tw/legislators/%E6%B1%9F%E5%95%9F%E8%87%A3" target="_blank"
+        class="text-blue-500 underline">查看完整地址</a>
+
     <script>
         const roadNames = [
             "一心路", "三和路", "三村路", "三村路仁德邨", "三村路合作新村", "三民路",
@@ -142,6 +145,9 @@
 
             const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}`;
             document.getElementById('fullAddress').value = fullAddress;
+
+            const address = encodeURIComponent(fullAddress);
+            addressLink.href = `https://recall2025.ourtaiwan.tw/legislators/%E6%B1%9F%E5%95%9F%E8%87%A3?address=${address}`;
         }
 
         document.getElementById('village').addEventListener('change', updateFullAddress);
@@ -150,6 +156,14 @@
         document.getElementById('lane').addEventListener('input', updateFullAddress);
         document.getElementById('alley').addEventListener('input', updateFullAddress);
         document.getElementById('number').addEventListener('input', updateFullAddress);
+
+        const fullAddressInput = document.getElementById('fullAddress');
+        const addressLink = document.getElementById('addressLink');
+
+        fullAddressInput.addEventListener('input', () => {
+            const address = encodeURIComponent(fullAddressInput.value);
+            addressLink.href = `https://recall2025.ourtaiwan.tw/legislators/%E6%B1%9F%E5%95%9F%E8%87%A3?address=${address}`;
+        });
     </script>
 </body>
 
