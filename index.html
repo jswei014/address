@@ -150,7 +150,7 @@
             const floor = document.getElementById('floor').value;
             const subNumber = document.getElementById('subNumber').value;
 
-            const fullAddress = `臺中市${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}${floor ? floor + '樓' : ''}${subNumber ? '之' + subNumber : ''}`;
+            const fullAddress = `臺中市豐原區${village}${neighbor ? neighbor + '鄰' : ''}${road}${lane ? lane + '巷' : ''}${alley ? alley + '弄' : ''}${number ? number + '號' : ''}${floor ? floor + '樓' : ''}${subNumber ? '之' + subNumber : ''}`;
             document.getElementById('fullAddress').value = fullAddress;
 
             const address = encodeURIComponent(fullAddress);
